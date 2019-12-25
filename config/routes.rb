@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  resources :documents, only: :index
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'

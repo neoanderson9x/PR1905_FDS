@@ -6,6 +6,7 @@ class DocumentsController < ApplicationController
 
   def show
     @document = Document.includes(comments: :user).find(params[:id])
+    @favorite_exists = Favorite.where(document: @document, user: current_user) == [] ? false : true
   end
 
   def new

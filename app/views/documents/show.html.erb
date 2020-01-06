@@ -1,6 +1,7 @@
 <tr>
   <td><%= @document.name %></td>
   <td><%= link_to "Download", @document.attachment_url %></td>
+  <%= link_to favorite_text, favorites_path(document: @document), id: 'favorite_link', remote: true %>
 </tr>
 <%= render "comments/comments"  %>
 <%= render "comments/form" %>

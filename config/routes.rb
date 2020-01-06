@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+  resources :favorites
+
   resources :documents, only: [:index, :new, :create, :destroy, :show] do
     resources :comments, only: [:create, :destroy]
   end
